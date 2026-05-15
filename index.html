@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dark Trader — Comunidade Gratuita de Criptomoedas e Trading</title>
+<meta name="description" content="Entre na comunidade gratuita do Dark Trader. Análises diárias, sinais e estudos do mercado de criptomoedas direto no seu Telegram.">
+<meta property="og:title" content="Dark Trader — Leia o mercado antes que ele se mova">
+<meta property="og:description" content="Comunidade prática e 100% gratuita de Criptomoedas e Trading.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--radius:.5rem;--background:oklch(.12 .005 60);--foreground:oklch(.96 .01 80);--card:oklch(.16 .008 60);--muted:oklch(.20 .008 60);--muted-foreground:oklch(.70 .02 80);--primary:oklch(.78 .14 78);--primary-foreground:oklch(.12 .005 60);--border:oklch(.28 .02 70);--gold:oklch(.72 .13 78);--gold-bright:oklch(.85 .16 85);--gradient-gold:linear-gradient(135deg,oklch(.85 .16 85),oklch(.65 .14 70));--gradient-radial-gold:radial-gradient(circle at 50% 0%,oklch(.4 .12 78/.35),transparent 60%);--shadow-gold:0 10px 40px -10px oklch(.78 .14 78/.45);}
+*,*::before,*::after{box-sizing:border-box;border-color:var(--border);}
+html{scroll-behavior:smooth;}
+body{margin:0;background-color:var(--background);color:var(--foreground);font-family:Inter,sans-serif;background-image:radial-gradient(ellipse 80% 50% at 50% -20%,oklch(.35 .10 78/.25),transparent),radial-gradient(ellipse 60% 40% at 0% 100%,oklch(.30 .08 78/.15),transparent);background-attachment:fixed;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:Oswald,sans-serif;letter-spacing:.01em;margin:0;}
+p{margin:0;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;height:auto;}
+ul{margin:0;padding:0;list-style:none;}
+blockquote{margin:0;}
+.text-gold-gradient{background:var(--gradient-gold);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.bg-gold-gradient{background:var(--gradient-gold);}
+.shadow-gold{box-shadow:var(--shadow-gold);}
+.border-gold{border-color:var(--gold);}
+@keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 oklch(.78 .14 78/.55);}50%{box-shadow:0 0 0 14px oklch(.78 .14 78/0);}}
+.pulse-gold{animation:pulse-gold 2.4s ease-out infinite;}
+@keyframes ping{75%,100%{transform:scale(2);opacity:0;}}
+.animate-ping{animation:ping 1s cubic-bezier(0,0,.2,1) infinite;}
+
+/* Layout helpers */
+.main{min-height:100vh;overflow-x:hidden;}
+.container{max-width:80rem;margin:0 auto;padding:0 1.5rem;}
+.container-md{max-width:64rem;margin:0 auto;padding:0 1.5rem;}
+.container-sm{max-width:56rem;margin:0 auto;padding:0 1.5rem;}
+
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in oklab,var(--background) 70%,transparent);border-bottom:1px solid color-mix(in oklab,var(--border) 60%,transparent);}
+.header-inner{max-width:80rem;margin:0 auto;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:.5rem;}
+.logo-mark{width:2.25rem;height:2.25rem;display:flex;align-items:center;justify-content:center;border-radius:.375rem;background:var(--gradient-gold);color:var(--primary-foreground);font-family:Oswald,sans-serif;font-weight:700;}
+.logo-text{font-family:Oswald,sans-serif;font-size:1.125rem;font-weight:600;letter-spacing:.2em;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:.375rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;transition:transform .3s,box-shadow .3s,background .3s,border-color .3s;cursor:pointer;border:none;}
+.btn:hover{transform:translateY(-2px);}
+.btn-gold{background:var(--gradient-gold);color:var(--primary-foreground);box-shadow:var(--shadow-gold);}
+.btn-gold:hover{box-shadow:0 15px 50px -10px oklch(.78 .14 78/.7);}
+.btn-outline{border:1px solid var(--border);background:color-mix(in oklab,var(--card) 60%,transparent);color:var(--foreground);backdrop-filter:blur(8px);}
+.btn-outline:hover{border-color:var(--gold);background:var(--card);}
+.btn-sm{padding:.5rem 1rem;font-size:.75rem;}
+.btn-md{padding:.75rem 1.25rem;font-size:.75rem;}
+.btn-lg{padding:1rem 1.5rem;font-size:.875rem;}
+.btn-xl{padding:1.25rem 2rem;font-family:Oswald,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.15em;border-radius:.5rem;gap:.75rem;}
+.icon{width:1rem;height:1rem;flex-shrink:0;}
+.icon-sm{width:.875rem;height:.875rem;}
+.icon-lg{width:1.25rem;height:1.25rem;}
+.icon-yt{color:oklch(.58 .22 27);}
+.icon-wa{color:oklch(.65 .16 150);}
+
+.cta-row{display:flex;flex-direction:column;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:.75rem;}
+@media(min-width:640px){.cta-row{flex-direction:row;}}
+
+/* Hero */
+.hero{position:relative;padding:2rem 0 5rem;}
+@media(min-width:640px){.hero{padding:3rem 0 7rem;}}
+.hero-bg{position:absolute;inset:0;z-index:-10;opacity:.7;background-size:cover;background-position:center;}
+.hero-overlay{position:absolute;inset:0;z-index:-10;background:linear-gradient(to bottom,color-mix(in oklab,var(--background) 40%,transparent),color-mix(in oklab,var(--background) 80%,transparent),var(--background));}
+.hero-inner{max-width:64rem;margin:0 auto;padding:0 1.5rem;text-align:center;}
+.badge{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid color-mix(in oklab,var(--gold) 40%,transparent);background:color-mix(in oklab,var(--card) 60%,transparent);padding:.375rem 1rem;backdrop-filter:blur(8px);}
+.badge-dot{position:relative;display:inline-flex;width:.5rem;height:.5rem;}
+.badge-dot::before{content:'';position:absolute;inset:0;border-radius:9999px;background:var(--gold);opacity:.75;animation:ping 1.4s cubic-bezier(0,0,.2,1) infinite;}
+.badge-dot::after{content:'';position:relative;display:inline-flex;width:.5rem;height:.5rem;border-radius:9999px;background:var(--gold-bright);}
+.badge-text{font-size:.75rem;text-transform:uppercase;letter-spacing:.25em;color:var(--muted-foreground);}
+.h1{margin-top:1.5rem;font-family:Oswald,sans-serif;font-size:2.25rem;font-weight:700;line-height:1.05;}
+@media(min-width:640px){.h1{font-size:3.75rem;}}
+@media(min-width:1024px){.h1{font-size:4.5rem;}}
+.lead{margin:1.5rem auto 0;max-width:42rem;font-size:1rem;color:var(--muted-foreground);}
+@media(min-width:640px){.lead{font-size:1.125rem;}}
+.mt-10{margin-top:2.5rem;}.mt-12{margin-top:3rem;}.mt-14{margin-top:3.5rem;}.mt-8{margin-top:2rem;}.mt-6{margin-top:1.5rem;}.mt-4{margin-top:1rem;}.mt-3{margin-top:.75rem;}
+.stats{margin-top:3rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+@media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr);}}
+.stat{border:1px solid color-mix(in oklab,var(--border) 60%,transparent);background:color-mix(in oklab,var(--card) 40%,transparent);border-radius:.5rem;padding:1rem;backdrop-filter:blur(8px);}
+.stat-k{font-family:Oswald,sans-serif;font-size:1.25rem;font-weight:700;background:var(--gradient-gold);-webkit-background-clip:text;background-clip:text;color:transparent;}
+@media(min-width:640px){.stat-k{font-size:1.5rem;}}
+.stat-v{margin-top:.25rem;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted-foreground);}
+
+/* Sections */
+.section{position:relative;padding:6rem 0;border-top:1px solid color-mix(in oklab,var(--border) 40%,transparent);}
+.section.no-border{border-top:none;}
+.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.3em;font-weight:600;background:var(--gradient-gold);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;}
+.h2{margin-top:.75rem;font-family:Oswald,sans-serif;font-size:1.875rem;font-weight:700;}
+@media(min-width:640px){.h2{font-size:3rem;}}
+.prose{margin-top:1.5rem;color:var(--muted-foreground);line-height:1.65;display:flex;flex-direction:column;gap:1rem;}
+.prose strong{color:var(--foreground);font-weight:600;}
+
+/* Community */
+.image-wrap{position:relative;}
+.image-glow{position:absolute;inset:-1rem;z-index:-10;border-radius:1rem;background:var(--gradient-gold);opacity:.2;filter:blur(40px);}
+.rounded-img{border-radius:1rem;border:1px solid var(--border);box-shadow:var(--shadow-gold);width:100%;}
+.community-text{margin:3.5rem auto 0;max-width:48rem;text-align:center;}
+
+/* Mentor */
+.mentor-bg{position:absolute;inset:0;z-index:-10;opacity:.3;background:var(--gradient-radial-gold);}
+.mentor-grid{display:grid;grid-template-columns:1fr;gap:3.5rem;align-items:center;max-width:80rem;margin:0 auto;padding:0 1.5rem;}
+@media(min-width:1024px){.mentor-grid{grid-template-columns:2fr 3fr;}}
+.image-glow-tight{position:absolute;inset:-.5rem;z-index:-10;border-radius:1rem;background:var(--gradient-gold);opacity:.25;filter:blur(40px);}
+.quote{margin-top:2rem;border-left:2px solid var(--gold);padding-left:1.25rem;font-family:Oswald,sans-serif;font-size:1.25rem;color:color-mix(in oklab,var(--foreground) 90%,transparent);font-style:italic;}
+
+/* Group CTA */
+.cta-card{position:relative;overflow:hidden;border-radius:1.5rem;border:1px solid color-mix(in oklab,var(--gold) 40%,transparent);background:color-mix(in oklab,var(--card) 70%,transparent);padding:2.5rem;backdrop-filter:blur(8px);max-width:64rem;margin:0 auto;}
+@media(min-width:640px){.cta-card{padding:3.5rem;}}
+.cta-blob{position:absolute;width:16rem;height:16rem;border-radius:9999px;background:var(--gradient-gold);filter:blur(60px);}
+.cta-blob.tr{top:-5rem;right:-5rem;opacity:.2;}
+.cta-blob.bl{bottom:-5rem;left:-5rem;opacity:.1;}
+.perks{margin:2rem auto 0;display:grid;grid-template-columns:1fr;gap:.75rem;max-width:42rem;}
+@media(min-width:640px){.perks{grid-template-columns:repeat(2,1fr);}}
+.perk{display:flex;align-items:center;gap:.75rem;border:1px solid color-mix(in oklab,var(--border) 60%,transparent);background:color-mix(in oklab,var(--background) 40%,transparent);border-radius:.75rem;padding:1rem;}
+.perk-icon{width:2.5rem;height:2.5rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:.5rem;background:var(--gradient-gold);color:var(--primary-foreground);}
+.perk-icon svg{width:1.25rem;height:1.25rem;}
+.perk-text{font-size:.875rem;font-weight:500;}
+.cta-center{margin-top:2.5rem;display:flex;justify-content:center;}
+
+/* Closing */
+.closing-tag{margin-top:3.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.75rem;text-transform:uppercase;letter-spacing:.3em;color:var(--muted-foreground);}
+.icon-bright{color:var(--gold-bright);}
+
+/* Footer */
+.footer{border-top:1px solid color-mix(in oklab,var(--border) 60%,transparent);padding:2.5rem 0;}
+.footer-inner{max-width:80rem;margin:0 auto;padding:0 1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;}
+@media(min-width:640px){.footer-inner{flex-direction:row;}}
+.footer-text{font-size:.75rem;color:var(--muted-foreground);text-align:center;max-width:28rem;}
+@media(min-width:640px){.footer-text{text-align:right;}}
+.hidden-mobile{display:none;}
+@media(min-width:640px){.hidden-mobile{display:inline-flex;}}
+</style>
+</head>
+<body>
+<main class="main">
+
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('img/1.jpeg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="badge"><span class="badge-dot"></span><span class="badge-text">Comunidade ao vivo • 100% gratuita</span></div>
+      <h1 class="h1">Aprenda a identificar <span class="text-gold-gradient">oportunidades</span> no mercado de criptomoedas</h1>
+      <p class="lead">Entre para a comunidade e acompanhe estratégias, estudos de mercado e movimentações em tempo real para tomar decisões mais informadas no universo cripto. Análises práticas e sinais gratuitos.</p>
+      <div class="mt-10">
+<div class="cta-row">
+  <a href="https://t.me/odarktraderr" class="btn btn-gold btn-lg"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>Entrar no Telegram Gratuito<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+  <a href="https://youtube.com/@darktrader.t?si=UsTqJXKnKqxrQN2r" class="btn btn-outline btn-lg"><span class="icon icon-yt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></span>Acessar Canal no YouTube</a>
+  <a href="https://wa.me/5582996061638" class="btn btn-outline btn-lg"><span class="icon icon-wa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Falar comigo no WhatsApp</a>
+</div></div>
+      <div class="stats"><div class="stat"><div class="stat-k">+50k</div><div class="stat-v">Membros</div></div><div class="stat"><div class="stat-k">Diárias</div><div class="stat-v">Análises</div></div><div class="stat"><div class="stat-k">Tempo Real</div><div class="stat-v">Sinais</div></div><div class="stat"><div class="stat-k">0 R$</div><div class="stat-v">Mensalidade</div></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="image-wrap">
+        <div class="image-glow"></div>
+        <img src="img/2.jpeg" alt="Comunidade Dark Trader — benefícios" class="rounded-img" loading="lazy">
+      </div>
+      <div class="community-text">
+        <span class="eyebrow">Por que participar</span>
+        <h2 class="h2">Por que participar da nossa <span class="text-gold-gradient">comunidade?</span></h2>
+        <div class="prose">
+          <p>O mercado de criptomoedas se tornou um dos setores financeiros mais acompanhados do mundo, movimentando bilhões diariamente e atraindo investidores que buscam novas oportunidades no ambiente digital.</p>
+          <p>A cada dia surgem novas tendências, projetos e movimentações que podem impactar diretamente o valor dos ativos. Por isso, acompanhar análises atualizadas e entender o comportamento do mercado pode fazer diferença para quem deseja aprender e operar com mais consciência.</p>
+          <p>Nosso grupo foi criado para pessoas que querem aprender mais sobre criptomoedas e trading, <strong>sem precisar comprar cursos ou pagar mensalidades.</strong></p>
+        </div>
+        <div class="mt-10">
+<div class="cta-row">
+  <a href="https://t.me/odarktraderr" class="btn btn-gold btn-md"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>Entrar no Telegram Gratuito<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+  <a href="https://youtube.com/@darktrader.t?si=UsTqJXKnKqxrQN2r" class="btn btn-outline btn-md"><span class="icon icon-yt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></span>Acessar Canal no YouTube</a>
+  <a href="https://wa.me/5582996061638" class="btn btn-outline btn-md"><span class="icon icon-wa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Falar comigo no WhatsApp</a>
+</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="mentor-bg"></div>
+    <div class="mentor-grid">
+      <div class="image-wrap">
+        <div class="image-glow-tight"></div>
+        <img src="img/3.jpeg" alt="Quem é o Dark Trader" class="rounded-img" loading="lazy">
+      </div>
+      <div>
+        <span class="eyebrow">O Mentor</span>
+        <h2 class="h2">Quem é o <span class="text-gold-gradient">Dark Trader?</span></h2>
+        <div class="prose">
+          <p>Atuo há anos acompanhando o mercado financeiro digital, com foco em criptomoedas, análise de tendências e identificação de oportunidades em ativos globais.</p>
+          <p>Ao longo da minha trajetória, desenvolvi métodos práticos para estudar o mercado e compartilhar insights com pessoas que desejam aprender mais sobre investimentos em cripto de forma simples e objetiva.</p>
+          <p>Hoje, meu objetivo é reunir uma comunidade de pessoas interessadas em acompanhar análises, notícias e sinais gratuitos, ajudando iniciantes e investidores a entender melhor o mercado.</p>
+        </div>
+        <blockquote class="quote">"Leia o mercado antes que ele se mova."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section no-border">
+    <div class="container-md">
+      <div class="cta-card">
+        <div class="cta-blob tr"></div>
+        <div class="cta-blob bl"></div>
+        <div style="text-align:center">
+          <span class="eyebrow">Acesso Imediato</span>
+          <h2 class="h2">Entre <span class="text-gold-gradient">gratuitamente</span><br>no grupo exclusivo</h2>
+          <p class="lead">No grupo gratuito você terá acesso a:</p>
+        </div>
+        <ul class="perks"><li class="perk"><div class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m5.155-6.2L8.29 4.26m5.908 1.042.348-1.97M7.48 20.364l3.126-17.727"/></svg></div><span class="perk-text">Atualizações sobre criptomoedas</span></li><li class="perk"><div class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><span class="perk-text">Sinais e análises de mercado</span></li><li class="perk"><div class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><span class="perk-text">Conteúdos educativos</span></li><li class="perk"><div class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></div><span class="perk-text">Avisos em tempo real</span></li><li class="perk"><div class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></div><span class="perk-text">Acompanhamento pelo Telegram</span></li></ul>
+        <div class="cta-center">
+          <a href="https://t.me/odarktraderr" class="btn btn-gold btn-xl pulse-gold"><span class="icon icon-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>Entrar Agora no Telegram<span class="icon icon-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-md" style="text-align:center">
+      <span class="eyebrow">Última chamada</span>
+      <h2 class="h2">O mercado de criptomoedas <span class="text-gold-gradient">muda todos os dias.</span></h2>
+      <p class="lead">Estar bem informado pode fazer diferença na forma como você acompanha oportunidades. Faça parte da comunidade gratuita e acompanhe as análises diretamente no seu celular.</p>
+      <div class="mt-10">
+<div class="cta-row">
+  <a href="https://t.me/odarktraderr" class="btn btn-gold btn-lg"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>Entrar no Telegram Gratuito<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+  <a href="https://youtube.com/@darktrader.t?si=UsTqJXKnKqxrQN2r" class="btn btn-outline btn-lg"><span class="icon icon-yt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></span>Acessar Canal no YouTube</a>
+  <a href="https://wa.me/5582996061638" class="btn btn-outline btn-lg"><span class="icon icon-wa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Falar comigo no WhatsApp</a>
+</div></div>
+      <div class="closing-tag"><span class="icon icon-bright"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Leia o mercado antes que ele se mova</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="logo">
+        <span class="logo-text" style="font-size:.875rem">DARK <span class="text-gold-gradient">TRADER</span></span>
+      </div>
+      <p class="footer-text">Conteúdo educativo. Não constitui recomendação de investimento. Cripto envolve riscos — estude antes de operar.</p>
+    </div>
+  </footer>
+</main>
+<script>
+// Smooth-scroll fallback for anchor placeholders
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href').slice(1);
+    const el=document.getElementById(id);
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
